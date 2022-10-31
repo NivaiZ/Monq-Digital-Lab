@@ -1,0 +1,44 @@
+// colors
+
+@basic-gray: #887C7C;
+@basic-black--input: #0B0A0A;
+@basic-gray--label: #585050;
+@basic-red: #D80909;
+@background-overlay: #B0B5BD;
+@extra-gray: #DFDADA;
+@basic-text--color: #887C7C;
+@basic-gray--background: #F8F8F8;
+@basic-blue: #2A75DB;
+@basic-blue--button :#205EB0;
+@basic-blue--shadow: #AAC9F1;
+@basic-white--heading: #F3F3F3;
+@basic-black: #0C0D0D;
+@basic-black--body: #1E1D1D;
+@bsic-black__input--background: #585050;
+@box-shadow--background: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+
+// fonts
+
+@font: 'Ubuntu', 'Arial', sans-serif;
+@deafult-weight__regular: 400;
+@deafult-weight__medium: 500;
+
+// container
+
+.container {
+  width: 100%;
+  max-width: 986px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 32px;
+  margin: 0 auto;
+  background-color: @basic-gray--background;
+  box-shadow: @box-shadow--background;
+  transition: background 0.5s 0.5s;
+}
+.container-switch {
+  background-color: @basic-black--body;
+  transition: background 0.5s 0.5s;
+}

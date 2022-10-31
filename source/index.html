@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-body">
+  <div class="page-body__wrapper">
+    <div class="container">
+      <main class="page-main">
+        <section class="description-block">
+          <ul class="description-block__list">
+
+            <li class="description-block__item">
+              <h2 class="description-block__heading">Preferences</h2>
+            </li>
+
+            <li class="description-block__item">
+              <p class="description-block__text">On this page you can configure the main system parameters available for
+                customization</p>
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="block-dropdown">
+          <form class="block-dropdown__form" action="https://echo.htmlacademy.ru/" id="dropdown-form" method="post">
+            <ul class="block-dropdown__list">
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description" for="dropdown-title">Company Title</label>
+                <input class="block-dropdown__enter block-dropdown__enter--input" name="title" id="dropdown-title" type="text"
+                  aria-label="Enter your company name" placeholder="Choise">
+              </li>
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description" for="dropdown-week">First Day</label>
+                <select class="block-dropdown__enter" id="dropdown-week" aria-label="Вays of the week">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+              </li>
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description" for="dropdown-container">Container Width</label>
+                <select class="block-dropdown__enter" id="dropdown-container" aria-label="Вays of the week">
+                  <option value="Fixed">Fixed</option>
+                  <option value="Adaptive layout">Adaptive layout</option>
+                  <option value="Block layout">Block layout</option>
+                </select>
+              </li>
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description" for="dropdown-container">Homepage</label>
+                <select class="block-dropdown__enter" id="dropdown-select" aria-label="Вays of the week">
+                  <option value="Starred Projects">Starred Projects</option>
+                  <option value="Close project">Close project</option>
+                </select>
+              </li>
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description" for="input-size">Indent Size</label>
+                <input class="block-dropdown__enter block-dropdown__enter--input taxt" id="input-size" type="text"
+                  aria-label="Enter your company name" placeholder="Default" name="size">
+              </li>
+
+              <li class="block-dropdown__item">
+                <label class="block-dropdown__description">Personal Code</label>
+                <div class="block-dropdown__wrapper">
+                  <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
+                    id="dropdown-code__part1" type="text" aria-label="Enter your company name" id="personal-code__1" maxlength="4">-
+
+                  <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
+                    id="dropdown-code__part2" type="text" aria-label="Enter your company name" id="personal-code__2" maxlength="4">-
+
+                  <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
+                    id="dropdown-code__part3" type="text" aria-label="Enter your company name" id="personal-code__3" maxlength="4">
+
+                </div>
+              </li>
+
+              <li class="block-dropdown__item block-dropdown__item--postion">
+                <p class="block-dropdown__checkbox block-dropdown__checkbox--text">Theme</p>
+                <div class="block-dropdown__block group-theme">
+
+                  <div class="block-dropdown__inner">
+                    <input class="block-dropdown__checkbox--input block-dropdown__checkbox--input--light" type="radio"
+                      id="light-checkbox" name="group-theme">
+                    <label
+                      class="block-dropdown__checkbox block-dropdown__checkbox--reverse block-dropdown__checkbox--label"
+                      for="light-checkbox">Light
+                    </label>
+                  </div>
+
+                  <div class="block-dropdown__inner">
+                    <input class="block-dropdown__checkbox--input block-dropdown__checkbox--input--dark" type="radio"
+                      id="dark-checkbox" name="group-theme">
+                    <label class="block-dropdown__checkbox block-dropdown__checkbox--label"
+                      for="dark-checkbox">Dark</label>
+                  </div>
+
+                </div>
+              </li>
+              <li class="block-dropdown__item block-dropdown__item--checkbox">
+                <button class="block-dropdown__button block-dropdown__button--submit" id="button-submit"
+                  type="submit">Apply and Save</button>
+                <button class="block-dropdown__button block-dropdown__button--reset" type="reset">Cancel</button>
+              </li>
+            </ul>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="js/index.js"></script>
+  </div>
+</body>
+
+</html>

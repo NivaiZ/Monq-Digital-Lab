@@ -1,0 +1,138 @@
+.block-dropdown__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  width: 100%;
+}
+
+.block-dropdown__form {
+  display: flex;
+}
+
+.block-dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.block-dropdown__enter {
+  max-width: 196px;
+  width: 100%;
+  padding: 6px 0 6px 8px;
+  color: @basic-black--input;
+  border-radius: 6px;
+  border: 1px solid @basic-gray;
+  background-color: @extra-gray;
+  transition: 0.5s ease;
+  outline: none;
+
+  &:focus {
+    border: 1px solid @basic-blue;
+  }
+
+  &:hover {
+    background-color: @extra-gray;
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.block-dropdown__description {
+  .text-font__small();
+  color: @basic-gray--label;
+}
+
+.block-dropdown__wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: @deafult-weight__regular;
+  color: @basic-text--color;
+  gap: 10px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "12 digits";
+    bottom: -15px;
+  }
+}
+
+.block-dropdown__enter--input--twelve {
+  max-width: 49px;
+  width: 100%;
+}
+
+.block-dropdown__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-dropdown__checkbox {
+  display: flex;
+}
+
+.block-dropdown__checkbox--reverse {
+  flex-direction: row-reverse;
+}
+
+.block-dropdown__checkbox--text {
+  .text-font__small();
+  color: @basic-gray--label;
+}
+
+.block-dropdown__checkbox--label {
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: @deafult-weight__regular;
+}
+
+.block-dropdown__inner {
+  display: flex;
+}
+
+.block-dropdown__checkbox--input {
+  width: 16px;
+}
+
+.block-dropdown__button {
+  outline: none;
+  border: none;
+  background-color: @basic-blue;
+  color: @basic-gray--background;
+  border-radius: 3px;
+  .text-forn__button();
+  padding: 4px 8px 4px 8px;
+  transition: 0.5s ease;
+
+  &:hover {
+    color: @basic-gray--background;
+    background-color: @basic-blue;
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+  }
+
+  &:focus {
+    border: 1px solid @basic-blue--shadow;
+    background-color: @basic-blue;
+    color: @basic-gray--background;
+  }
+}
+
+.block-dropdown__button--reset {
+  margin-left: 16px;
+  background-color: transparent;
+  color: @basic-blue--button;
+}
+
+.block-dropdown__item--postion {
+  justify-content: flex-start;
+  column-gap: 80px;
+}
+
+.block-dropdown__item--checkbox {
+  display: flex;
+  justify-content: flex-start;
+}
