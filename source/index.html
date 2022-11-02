@@ -34,13 +34,14 @@
 
               <li class="block-dropdown__item">
                 <label class="block-dropdown__description" for="dropdown-title">Company Title</label>
-                <input class="block-dropdown__enter block-dropdown__enter--input" name="title" id="dropdown-title" type="text"
-                  aria-label="Enter your company name" placeholder="Choise">
+                <input class="block-dropdown__enter block-dropdown__enter--input" name="title" id="dropdown-title"
+                  type="text" aria-label="Enter your company name" placeholder="Choise">
               </li>
 
               <li class="block-dropdown__item">
                 <label class="block-dropdown__description" for="dropdown-week">First Day</label>
-                <select class="block-dropdown__enter" id="dropdown-week" aria-label="Вays of the week">
+                <select class="block-dropdown__enter block-dropdown__enter--select" id="dropdown-week"
+                  aria-label="Вays of the week" name="week" onchange="SaveSelectValue(this)">
                   <option value="Monday">Monday</option>
                   <option value="Tuesday">Tuesday</option>
                   <option value="Wednesday">Wednesday</option>
@@ -53,7 +54,8 @@
 
               <li class="block-dropdown__item">
                 <label class="block-dropdown__description" for="dropdown-container">Container Width</label>
-                <select class="block-dropdown__enter" id="dropdown-container" aria-label="Вays of the week">
+                <select class="block-dropdown__enter block-dropdown__enter--select" id="dropdown-container"
+                  aria-label="Вays of the week" name="container" onchange="SaveSelectValue(this)">
                   <option value="Fixed">Fixed</option>
                   <option value="Adaptive layout">Adaptive layout</option>
                   <option value="Block layout">Block layout</option>
@@ -62,7 +64,8 @@
 
               <li class="block-dropdown__item">
                 <label class="block-dropdown__description" for="dropdown-container">Homepage</label>
-                <select class="block-dropdown__enter" id="dropdown-select" aria-label="Вays of the week">
+                <select class="block-dropdown__enter block-dropdown__enter--select" id="dropdown-select"
+                  aria-label="Вays of the week" name="homepage" onchange="SaveSelectValue(this)">
                   <option value="Starred Projects">Starred Projects</option>
                   <option value="Close project">Close project</option>
                 </select>
@@ -74,18 +77,26 @@
                   aria-label="Enter your company name" placeholder="Default" name="size">
               </li>
 
-              <li class="block-dropdown__item">
-                <label class="block-dropdown__description">Personal Code</label>
+              <li class="block-dropdown__item block-dropdown__item--inner">
+                <label class="block-dropdown__description" for="code1">Personal Code</label>
                 <div class="block-dropdown__wrapper">
                   <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
-                    id="dropdown-code__part1" type="text" aria-label="Enter your company name" id="personal-code__1" maxlength="4">-
+                    id="dropdown-code__part1" type="text" aria-label="Enter your company name" id="personal-code__1"
+                    maxlength="4" name="code1">-
 
-                  <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
-                    id="dropdown-code__part2" type="text" aria-label="Enter your company name" id="personal-code__2" maxlength="4">-
+                  <label for="code2">
+                    <input
+                      class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
+                      id="dropdown-code__part2" type="text" aria-label="Enter your company name" id="personal-code__2"
+                      maxlength="4" name="code2">-
+                  </label>
 
-                  <input class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
-                    id="dropdown-code__part3" type="text" aria-label="Enter your company name" id="personal-code__3" maxlength="4">
-
+                  <label for="code3">
+                    <input
+                      class="block-dropdown__enter block-dropdown__enter--input block-dropdown__enter--input--twelve"
+                      id="dropdown-code__part3" type="text" aria-label="Enter your company name" id="personal-code__3"
+                      maxlength="4" name="code3">
+                    <label for="code3">
                 </div>
               </li>
 
@@ -120,6 +131,27 @@
           </form>
         </section>
       </main>
+      <footer class="footer">
+        <ul class="footer-block__item">
+          <li class="footer-block__item">
+            <figure class="footer-block__description">
+              <img class="footer-block__img" alt="footer-logo" src="./img/footerlogo.png">
+            </figure>
+          </li>
+        </ul>
+
+        <ul class="footer-block__item">
+          <li class="footer-block__list">
+            <p class="footer-block__text">2020-2022</p>
+            <a class="footer-block__link" href="#" target="_blank">Terms of Service</a>
+          </li>
+
+          <li class="footer-block__list">
+            <p class="footer-block__text">and</p>
+            <a class="footer-block__link" href="#" target="_blank">Conditions</a>
+          </li>
+        </ul>
+      </footer>
     </div>
     <script src="js/index.js"></script>
   </div>

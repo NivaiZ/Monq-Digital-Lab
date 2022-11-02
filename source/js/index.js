@@ -1,85 +1,89 @@
-const button = document.querySelector('#button-submit');
 const body = document.querySelector('.page-body__wrapper');
-const darkRadio = document.querySelector('#dark-checkbox');
+const darkRadio = document.getElementById('dark-checkbox');
+const lightRadio = document.getElementById('light-checkbox');
 const container = document.querySelector('.container');
-const containerSwitch = document.querySelector('.container-switch');
-const groupCodeOne = document.getElementById('dropdown-code__part1');
-const groupCodeTwo = document.getElementById('dropdown-code__part2');
-const groupCodeThree = document.getElementById('dropdown-code__part3');
-const darkCheckbox = document.getElementById('dark-checkbox').value;
-const inputTitle = document.getElementById('dropdown-title');
-const selectedGroupTwo = document.getElementById('dropdown-week').value;
-const selectGroupFive = document.getElementById('input-size');
-const selectedGroupThree = document.getElementById('dropdown-container').value;
-const selectedGroupFour = document.getElementById('dropdown-select').value;
-const groupthemeColor = document.getElementsByName('group-theme');
+const pageBody = document.querySelector('.page-body');
 
-function store() {
-  for (const color of groupthemeColor) {
-    localStorage.setItem('theme', color.value);
+function submitButtonHandler(event) {
+
+  event.preventDefault();
+
+  const form = document.getElementById('dropdown-form');
+
+  const formData = new FormData(form);
+
+  for (const field of formData) {
+    const [key, value] = field;
+
+    if (value) localStorage.setItem(key, value)
+
+    else if (localStorage.getItem(key) !== undefined)
+
+      localStorage.removeItem(key);
   }
-  localStorage.setItem('Input__Company', inputTitle.value);
-  localStorage.setItem('Dropdown__Week', selectedGroupTwo);
-  localStorage.setItem('Dark__Checkbox', darkCheckbox);
-  localStorage.setItem('Dropdown__Container', selectedGroupThree);
-  localStorage.setItem('Dropdown__Homepage', selectedGroupFour);
-  localStorage.setItem('Input__Size', selectGroupFive.value);
-  localStorage.setItem('Code1', groupCodeOne.value);
-  localStorage.setItem('Code2', groupCodeTwo.value);
-  localStorage.setItem('Code3', groupCodeThree.value);
 
-}
-
-const activeInputTitle = localStorage.getItem('Input__Company');
-if (activeInputTitle !== '' || activeInputTitle !== '') {
-  inputTitle.value = activeInputTitle;
-} else {
-  inputTitle.value = '';
-}
-
-const activeInputSize = localStorage.getItem('Input__Size');
-if (activeInputSize !== '' || activeInputSize !== '') {
-  selectGroupFive.value = activeInputSize;
-} else {
-  selectGroupFive.value = '';
-}
-
-const groupInputCodeOne = localStorage.getItem('Code1');
-if (groupInputCodeOne !== '' || groupInputCodeOne !== '') {
-  groupCodeOne.value = groupInputCodeOne;
-} else {
-  groupCodeOne.value = '';
-}
-
-const groupInputCodeTwo = localStorage.getItem('Code2');
-if (groupInputCodeTwo !== '' || groupInputCodeTwo !== '') {
-  groupCodeTwo.value = groupInputCodeTwo;
-} else {
-  groupCodeTwo.value = '';
-}
-
-const groupInputCodeThree = localStorage.getItem('Code3');
-if (groupInputCodeThree !== '' || groupInputCodeThree !== '') {
-  groupCodeThree.value = groupInputCodeThree;
-} else {
-  groupCodeThree.value = '';
-}
-
-function classHandler() {
   if (darkRadio.checked) {
     body.classList.add('page-body__wrapper--switch');
     container.classList.add('container-switch');
     body.classList.remove('page-body__wrapper');
-  } else {
+    localStorage.setItem('dark-mode', true);
+
+  } else if (lightRadio.checked) {
     body.classList.remove('page-body__wrapper--switch');
     body.classList.add('page-body__wrapper');
     container.classList.remove('container-switch');
+    localStorage.setItem('dark-mode', false);
+  }
+  const currentTheme = localStorage.getItem('dark-mode');
+  if (currentTheme === 'true') {
+    pageBody.classList.add('dark-theme');
+  } else if (currentTheme === 'false') {
+    pageBody.classList.add('light-theme');
+    pageBody.classList.remove('dark-theme');
   }
 }
 
-button.addEventListener('click', (e) => {
-  e.preventDefault();
-  classHandler();
-  store();
-});
+function pageOpeningHandler() {
 
+  const form = document.getElementById('dropdown-form');
+
+  const textInputs = form.querySelectorAll('input');
+
+  for (const textInput of textInputs) {
+
+    const textInputName = textInput.name;
+
+    if (!textInputName) continue
+
+    const savedValue = localStorage.getItem(textInputName);
+
+    if (!savedValue) continue
+
+    textInput.value = savedValue;
+  }
+  const currentTheme = localStorage.getItem('dark-mode');
+  if (currentTheme) pageBody.classList.add('dark-theme');
+
+}
+
+const submitButton = document.querySelector('.block-dropdown__button--submit');
+
+submitButton.addEventListener('click', submitButtonHandler, SaveSelectValue, LoadSelectValue);
+
+document.addEventListener('DOMContentLoaded', pageOpeningHandler);
+
+function SaveSelectValue(el) {
+  localStorage.setItem(el.name, el.value);
+}
+function LoadSelectValue(el) {
+  return localStorage.getItem(el.name);
+}
+
+let selectCheckWeek = document.querySelector("[name='week']");
+selectCheckWeek.value = LoadSelectValue(selectCheckWeek);
+
+let selectCheckContainer = document.querySelector("[name='container']");
+selectCheckContainer.value = LoadSelectValue(selectCheckContainer);
+
+let selectCheckHomepage = document.querySelector("[name='homepage']");
+selectCheckHomepage.value = LoadSelectValue(selectCheckHomepage);
