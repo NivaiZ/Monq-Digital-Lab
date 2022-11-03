@@ -26,7 +26,7 @@ const styles = () => {
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
-}
+};
 
 exports.styles = styles;
 
@@ -36,7 +36,8 @@ const html = () => {
   return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
-}
+};
+
 exports.html = html;
 // Scripts
 
@@ -46,23 +47,16 @@ const scripts = () => {
     .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
-}
+};
 
 exports.scripts = scripts;
 
 // Images
 
-const optimizeImages = () => {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(gulp.dest("build/img"))
-}
-
-exports.images = optimizeImages;
-
 const copyImages = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(gulp.dest("build/img"))
-}
+};
 
 exports.images = copyImages;
 
@@ -78,7 +72,7 @@ const copy = (done) => {
   })
     .pipe(gulp.dest("build"))
   done();
-}
+};
 
 exports.copy = copy;
 
@@ -88,6 +82,7 @@ const clean = () => {
   return del("build");
 };
 
+exports.clean = clean;
 // Server
 
 const server = (done) => {
@@ -100,7 +95,7 @@ const server = (done) => {
     ui: false,
   });
   done();
-}
+};
 
 exports.server = server;
 
@@ -109,7 +104,7 @@ exports.server = server;
 const reload = (done) => {
   sync.reload();
   done();
-}
+};
 
 // Watcher
 
@@ -117,14 +112,13 @@ const watcher = () => {
   gulp.watch("source/less/**/*.less", gulp.series(styles));
   gulp.watch("source/js/script.js", gulp.series(scripts));
   gulp.watch("source/*.html", gulp.series(html, reload));
-}
+};
 
 // Build
 
 const build = gulp.series(
   clean,
   copy,
-  optimizeImages,
   gulp.parallel(
     styles,
     html,

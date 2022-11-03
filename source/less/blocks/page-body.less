@@ -1,18 +1,22 @@
 .page-body__wrapper {
   background-color: @background-overlay;
+  transition: background 0.5s 0.5s;
 }
 
 .dark-theme {
   transition: background 0.5s 0.5s;
-
 }
 
 .dark-theme .page-body__wrapper {
   background-color: @basic-black;
 }
 
-.dark-theme .container{
+.dark-theme .page-body__wrapper--switch {
   background-color: @basic-black;
+}
+
+.dark-theme .container {
+  background-color: @basic-black--body;
 }
 
 .dark-theme .block-dropdown__enter {

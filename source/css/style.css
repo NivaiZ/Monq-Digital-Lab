@@ -532,6 +532,7 @@ li {
 }
 .page-body__wrapper {
   background-color: #B0B5BD;
+  transition: background 0.5s 0.5s;
 }
 .dark-theme {
   transition: background 0.5s 0.5s;
@@ -539,8 +540,11 @@ li {
 .dark-theme .page-body__wrapper {
   background-color: #0C0D0D;
 }
-.dark-theme .container {
+.dark-theme .page-body__wrapper--switch {
   background-color: #0C0D0D;
+}
+.dark-theme .container {
+  background-color: #1E1D1D;
 }
 .dark-theme .block-dropdown__enter {
   background-color: #585050;
