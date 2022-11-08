@@ -32,7 +32,7 @@ function submitButtonHandler(event) {
     body.classList.remove('page-body__wrapper--switch');
     body.classList.add('page-body__wrapper');
     container.classList.remove('container-switch');
-    localStorage.setItem('dark-mode', false);
+    localStorage.setItem('', false);
   }
   const currentTheme = localStorage.getItem('dark-mode');
   if (currentTheme === 'true') {
