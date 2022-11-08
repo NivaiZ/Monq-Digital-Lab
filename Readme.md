@@ -1,5 +1,4 @@
-UTF-8
-  # Monq-Digital-Lab
+# Monq-Digital-Lab
 
 [Демо проекта](https://nivaiz.github.io/Monq-Digital-Lab/build/index.html)
 
